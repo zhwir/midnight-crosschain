@@ -1,5 +1,4 @@
 import path2 from 'path';
-import { fileURLToPath } from 'url';
 import * as __compactRuntime from '@midnight-ntwrk/compact-runtime';
 import { ContractState, rawTokenType, sampleSigningKey } from '@midnight-ntwrk/compact-runtime';
 import { CompiledContract } from '@midnight-ntwrk/compact-js';
@@ -17,7 +16,7 @@ import { MidnightBech32m, ShieldedAddress, UnshieldedAddress } from '@midnight-n
 import assert2 from 'assert';
 
 // node_modules/tsup/assets/esm_shims.js
-var getFilename = () => fileURLToPath(import.meta.url);
+var getFilename = () => import.meta.filename;
 var getDirname = () => path2.dirname(getFilename());
 var __dirname$1 = /* @__PURE__ */ getDirname();
 
@@ -11552,7 +11551,7 @@ new Contract({});
 var CrossChainPrivateStateId = "crossChainPrivateState";
 function getDirname2() {
   if (typeof import.meta?.url === "string") {
-    const ret = path2.resolve(fileURLToPath(import.meta.url), "..");
+    const ret = path2.resolve(import.meta.dirname, "..");
     return ret;
   }
   return path2.resolve(__dirname$1, "..");
